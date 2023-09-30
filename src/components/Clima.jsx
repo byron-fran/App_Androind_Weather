@@ -1,4 +1,11 @@
-import { Text, View, StyleSheet, Image } from "react-native"
+/* eslint-disable eol-last */
+/* eslint-disable curly */
+/* eslint-disable radix */
+// eslint-disable-next-line prettier/prettier
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable prettier/prettier */
+import { Text, View, StyleSheet, Image } from 'react-native';
 
 
 const Clima = ({lugar}) => {
@@ -16,7 +23,6 @@ const Clima = ({lugar}) => {
                 <Text style={styles.texto}>min {parseInt(main.temp_min - kelvin)}
                 <Text>&#x2103;</Text>
                 </Text>
-               
             </View>
             <View>
                  <Text   style={styles.texto}>max {parseInt(main.temp_max - kelvin)}
@@ -34,19 +40,18 @@ const styles = StyleSheet.create({
         fontSize : 70,
         textAlign : 'center',
         marginLeft : 0,
-        fontWeight : 'bold'
+        fontWeight : 'bold',
     },
     climas :{
         justifyContent : 'center',
         flexDirection : 'row',
         gap : 15,
-        marginBottom : 10
-        
+        marginBottom : 10,
     },
     texto :{
         color : '#fff',
-        textAlign : 'center'
-    }
-})
+        textAlign : 'center',
+    },
+});
 
 export default Clima

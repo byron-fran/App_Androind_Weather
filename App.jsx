@@ -9,6 +9,8 @@ import {
 } from 'react-native';
 import Formulario from './src/components/Formulario';
 import Clima from './src/components/Clima';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const App = () => {
   const [consultar, setConsultar] = useState(false);
@@ -26,7 +28,7 @@ const App = () => {
     const getData = async () => {
       if (consultar) {
         try {
-          const key = '00285f86e38eb2bb0077f3b294e6e0ac';
+          const key = process.env.KEY_API;
           const url = `http://api.openweathermap.org/data/2.5/weather?q=${lugar.ciudad},${lugar.pais}&appid=${key}`;
           const res = await fetch(url);
           const data = await res.json();
