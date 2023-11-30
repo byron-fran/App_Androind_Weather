@@ -11,7 +11,7 @@ import { Text, View, StyleSheet, Image } from 'react-native';
 const Clima = ({lugar}) => {
     const {name, main} = lugar;
     const kelvin = 273.15;
-    if(name === undefined) return null;
+    if (name === undefined) return null;
   return (
     <View>
         <Text style={styles.textoClima} > {parseInt(main.temp - kelvin)}
