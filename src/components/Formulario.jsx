@@ -92,11 +92,13 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: '#fff',
     borderRadius: 10,
+    color : '#000',
   },
   picker: {
     backgroundColor: '#fff',
     marginTop: 20,
     borderRadius: 10,
+    color : '#000',
   },
   boton: {
     backgroundColor: '#5e49e2',

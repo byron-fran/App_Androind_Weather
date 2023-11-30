@@ -5,15 +5,20 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable prettier/prettier */
+import { useState } from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
 
 
-const Clima = ({lugar}) => {
+const Clima = ({lugar,errorFoundCity}) => {
+   
     const {name, main} = lugar;
     const kelvin = 273.15;
     if (name === undefined) return null;
+  
   return (
     <View>
+        <Text style={styles.textCity}>{lugar?.name}</Text>
+      
         <Text style={styles.textoClima} > {parseInt(main.temp - kelvin)}
             <Text>&#x2103;</Text>
             <Image style={{ width : 66, height : 50}} source={{uri : `http://api.openweathermap.org/img/w/${lugar.weather[0].icon}.png`}}/>
@@ -52,6 +57,16 @@ const styles = StyleSheet.create({
         color : '#fff',
         textAlign : 'center',
     },
+    textCity : {
+        textAlign : 'center',
+        color  : '#fff',
+        fontSize : 20,
+    },
+    textNotFound : {
+        textAlign : 'center',
+        color  : '#ff0000',
+        fontSize : 20,
+    }
 });
 
 export default Clima
